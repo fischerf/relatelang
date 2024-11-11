@@ -1,6 +1,9 @@
 
 # RelateScript: A Declarative Language to streamline the generation of consistent prompts for large language models (LLMs)
 
+*By Florian Fischer*  
+*https://github.com/fischerf/*
+
 ## Abstract
 RelateScript is a proposed declarative language designed to allow flexible, readable, and context-sensitive programming based on relational and predicate logic. This paper presents RelateScript's syntax, purpose, and a comparison with existing languages. By focusing on relationships, conditions, and context, RelateScript aims to bridge the gap between natural language expression and computational logic, making it particularly suited for applications in knowledge representation, AI, and decision-making systems.
 
