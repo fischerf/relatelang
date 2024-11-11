@@ -179,3 +179,4 @@ Future work could involve testing the language in real-world AI and knowledge ma
 3. Berners-Lee, T., Hendler, J., & Lassila, O. (2001). "The Semantic Web". *Scientific American*.
 4. Baader, F., Calvanese, D., McGuinness, D., Nardi, D., & Patel-Schneider, P.F. (2003). *The Description Logic Handbook: Theory, Implementation, and Applications*. Cambridge University Press.
 5. Ni, Y., & Mendling, J. (2008). "Business Rule Management for a Pragmatic Approach". *Proceedings of the International Conference on Knowledge Management*.
+6. Oluwole Fagbohun (2024), "An Empirical Categorization of Prompting Techniques for Large Language Models: A Practitioner’s Guide"
