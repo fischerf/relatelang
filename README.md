@@ -27,7 +27,7 @@ The syntax of RelateScript emphasizes natural language structure, allowing for r
 - **Goals**: `ensure <Goal>.`
 
 ### 2.2 Example
-Below is an example program that defines a customer, a product, and conditions for purchase.
+Below is an example prompt that defines a customer, a product, and conditions for purchase.
 
 ```plaintext
 define Product as "A product for sale".
@@ -75,7 +75,7 @@ number           ::= digit { digit } ;
 
 ### 2.4 Explanations of the rules
 
-1. **Main structure (`program`)**: A program consists of a sequence of `statements`, each of which defines a particular piece of information, relationship or statement.
+1. **Main structure (`program`)**: A program (prompt) consists of a sequence of `statements`, each of which defines a particular piece of information, relationship or statement.
 
 2. **Statements**:
 - **Definition** (`definition`): Defines an entity with a name and a description.
