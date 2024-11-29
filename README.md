@@ -26,20 +26,8 @@ The syntax of RelateScript emphasizes natural language structure, allowing for r
 - **Conditions**: `if <Condition>, then <Action>.`
 - **Goals**: `ensure <Goal>.`
 
-### 2.2 Example
+### 2.2 Examples
 Below is an example prompt that defines a customer, a product, and conditions for purchase.
-
-```plaintext
-define City as "A collection of buildings and people".
-Berlin is a City.
-Berlin has Population of 3_500_000.
-define Metropolis as "A city with more than 1_000_000 inhabitants".
-
-if City has Population > 1_000_000,
-    then ensure City is a Metropolis.
-```
-
-another sample prompt:
 
 ```define Product as "A product for sale".
 Product is available.
@@ -53,6 +41,23 @@ relate Customer and Product as "buys" if Product is available and Customer has b
 
 ensure Customer buys Product.
 ```
+
+Expected Behavior: The LLM should recognize that the Customer buys the Product.
+
+
+Here we have another sample prompt with compound instructions and multi-level logic.
+
+```plaintext
+define City as "A collection of buildings and people".
+Berlin is a City.
+Berlin has Population of 3_500_000.
+define Metropolis as "A city with more than 1_000_000 inhabitants".
+
+if City has Population > 1_000_000,
+    then ensure City is a Metropolis.
+```
+
+Expected Behavior: The LLM should recognize that Berlin is a "Metropolis" because its population is greater than 1,000,000.
 
 ### 2.3 eBNF Grammar
 The following Extended Backus-Naur Form (eBNF) defines RelateScript's syntax:
