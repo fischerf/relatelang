@@ -30,17 +30,13 @@ The syntax of RelateScript emphasizes natural language structure, allowing for r
 Below is an example prompt that defines a customer, a product, and conditions for purchase.
 
 ```plaintext
-define Product as "A product for sale".
-Product is available.
-Product has price of 100.
-Product has category of "Electronics".
+define City as "A collection of buildings and people".
+Berlin is a City.
+Berlin has Population of 3_500_000.
+define Metropolis as "A city with more than 1_000_000 inhabitants".
 
-define Customer as "A person who wants to buy a product".
-Customer has budget of 150.
-
-relate Customer and Product as "buys" if Product is available and Customer has budget of 150.
-
-ensure Customer buys Product.
+if City has Population > 1_000_000,
+    then ensure City is a Metropolis.
 ```
 
 ### 2.3 eBNF Grammar
