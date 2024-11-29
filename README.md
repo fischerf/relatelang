@@ -39,6 +39,21 @@ if City has Population > 1_000_000,
     then ensure City is a Metropolis.
 ```
 
+another sample prompt:
+
+```define Product as "A product for sale".
+Product is available.
+Product has price of 100.
+Product has category of "Electronics".
+
+define Customer as "A person who wants to buy a product".
+Customer has budget of 150.
+
+relate Customer and Product as "buys" if Product is available and Customer has budget of 150.
+
+ensure Customer buys Product.
+```
+
 ### 2.3 eBNF Grammar
 The following Extended Backus-Naur Form (eBNF) defines RelateScript's syntax:
 
