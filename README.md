@@ -170,16 +170,56 @@ RelateScript’s structure is ideal for:
 
 3. **Processing Capability of LLMs**: Modern LLMs like GPT-4 are designed to understand natural language and process it contextually. They are often already capable of interpreting complex instructions without requiring a formalized language. In many cases, LLMs understand natural language accurately enough, so RelateScript offers fewer advantages.
 
-### 4.3 Recommendation: Combining RelateScript and Natural Language
-One approach could be to use RelateScript as a *supplement* to natural language, especially for instructions that contain logical sequences, conditions, and relationships. For example, you might formulate instructions in natural language and use RelateScript for precise, logical parts.
+### 4.3 Combining RelateScript and Natural Language
+
+RelateScript stands as a structured, logic-driven framework that can seamlessly complement natural language-based prompting approaches. While natural language offers unparalleled flexibility and nuance, particularly for creative and ambiguous tasks, RelateScript excels in scenarios requiring clarity, precision, and logical consistency. 
+
+#### **Integration with Natural Language Prompting**
+RelateScript can be effectively paired with natural language inputs to combine the strengths of both methods:
+- **Natural Language**: Provides the flexibility to set context, describe abstract ideas, or initiate creative exploration.
+- **RelateScript**: Ensures logical rigor by explicitly defining entities, relationships, and conditional rules.
+
+For example, a user might begin with a natural language prompt such as:  
+*"Help me build a sales model. Start by making basic assumptions about customers and products."*  
+
+This context can then be supported by a RelateScript block:  
+```plaintext
+define Customer as "A person who buys products".
+Customer has budget of 200.
+define Product as "A sellable item".
+Product has price of 150.
+
+relate Customer and Product as "purchases" if Customer has budget >= Product price.
+ensure Customer purchases Product.
+```
+
+This combination allows LLMs to leverage the intuitive and context-rich setup of natural language while adhering to the logical structure and precision of RelateScript.
+
+#### **Complementing LLM Prompting Techniques**
+RelateScript aligns with advanced prompting techniques for LLMs, such as:
+1. **Logical and Sequential Processing**: By explicitly structuring steps and conditions, RelateScript mirrors techniques like Chain-of-Thought (CoT) prompting, enhancing the LLM's ability to reason through multi-step tasks.
+2. **Specificity and Targeting**: RelateScript's declarative syntax inherently reduces ambiguity, making it particularly suited for Target-your-response (TAR) prompts or goal-driven interactions.
+3. **Contextual Understanding**: The structured representation of relationships and dependencies enables LLMs to maintain coherent outputs across context-rich or multi-step scenarios.
+
+#### **Applications and Limitations**
+RelateScript is ideal for tasks requiring:
+- Precise execution of logical rules and conditions.
+- Modeling of structured systems like workflows, decision trees, or knowledge graphs.
+
+However, natural language remains superior for:
+- Creative, open-ended tasks where ambiguity or nuance is a feature, not a limitation.
+- Rapid prototyping of ideas without requiring formalized structures.
+
+#### **Recommendation**
+The most effective use of RelateScript lies in its hybrid application, where it acts as a supplement to natural language inputs. This approach allows users to balance creativity and logical consistency, enabling LLMs to handle a wider range of tasks with both precision and adaptability.
 
 ---
 
 ## 5. Conclusion
 
-RelateScript provides a human-readable, declarative approach to programming that emphasizes relationships, conditions, and context. By drawing on relational models and predicate logic, RelateScript offers a middle ground between natural language and computational logic, making it suitable for applications where readability and flexibility are crucial.
+RelateScript provides a structured, declarative framework for tasks that require precision and logical consistency, making it a powerful tool in applications such as knowledge representation, decision-making, and AI systems. Its syntax emphasizes readability and ease of understanding, allowing users to convey complex conditions and objectives in a manner that resonates with natural human language.
 
-RelateScript is designed as a tool to streamline the generation of consistent prompts for large language models (LLMs). By leveraging syntax that emphasizes readability and ease of understanding, RelateScript allows users to convey complex conditions and objectives in a manner that resonates with natural human language. Unlike traditional programming languages that require explicit definitions of loops, types, and other constructs, RelateScript presumes that LLMs inherently recognize these contextual cues. This approach prioritizes natural language principles over rigid programming paradigms, making it easier for humans to communicate nuanced instructions that align with an LLM's contextual understanding capabilities.
+By integrating RelateScript with natural language prompting, users can leverage the best of both worlds—combining the intuitive, creative capabilities of natural language with the rigor and repeatability of logical reasoning. This hybrid approach broadens the scope of RelateScript's applications and positions it as an essential tool for enhancing LLM-driven workflows.
 
 Future work could involve testing the language in real-world AI and knowledge management systems.
  
@@ -195,4 +235,6 @@ Future work could involve testing the language in real-world AI and knowledge ma
 3. Berners-Lee, T., Hendler, J., & Lassila, O. (2001). "The Semantic Web". *Scientific American*.
 4. Baader, F., Calvanese, D., McGuinness, D., Nardi, D., & Patel-Schneider, P.F. (2003). *The Description Logic Handbook: Theory, Implementation, and Applications*. Cambridge University Press.
 5. Ni, Y., & Mendling, J. (2008). "Business Rule Management for a Pragmatic Approach". *Proceedings of the International Conference on Knowledge Management*.
-6. Oluwole Fagbohun (2024), "An Empirical Categorization of Prompting Techniques for Large Language Models: A Practitioner’s Guide"
+6. Fagbohun, O., Harrison, R. M., Dereventsov, A. (2024). An Empirical Categorization of Prompting Techniques for Large Language Models: A Practitioner’s Guide. Preprint presented at the 4th International Conference on AI, ML, Data Science, and Robotics.
+7. Liu, P., et al. (2023). Pre-train, prompt, and predict: A systematic survey of prompting methods in natural language processing. ACM Computing Surveys, 55(9).
+8. Yu, Z., et al. (2023). Towards better chain-of-thought prompting strategies: A survey. arXiv preprint arXiv:2310.04959.
