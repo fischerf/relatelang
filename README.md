@@ -26,26 +26,9 @@ The syntax of RelateScript emphasizes natural language structure, allowing for r
 - **Conditions**: `if <Condition>, then <Action>.`
 - **Goals**: `ensure <Goal>.`
 
-### 2.2 Examples
-Below is an example prompt that defines a customer, a product, and conditions for purchase.
+### 2.2 Example
 
-```define Product as "A product for sale".
-Product is available.
-Product has price of 100.
-Product has category of "Electronics".
-
-define Customer as "A person who wants to buy a product".
-Customer has budget of 150.
-
-relate Customer and Product as "buys" if Product is available and Customer has budget of 150.
-
-ensure Customer buys Product.
-```
-
-Expected Behavior: The LLM should recognize that the Customer buys the Product.
-
-
-Here we have another sample prompt with compound instructions and multi-level logic.
+A prompt with compound instructions and multi-level logic.
 
 ```plaintext
 define City as "A collection of buildings and people".
@@ -85,8 +68,14 @@ predicate_operator ::= "is" | "is not" ;
 attribute_operator ::= "has" | "does not have" ;
 relation_operator  ::= "relates to" | "does not relate to" ;
 identifier       ::= letter { letter | digit | "_" } ;
+letter           ::= "a" | "b" | " ..." | "z";
 string           ::= '"' { character } '"' ;
 number           ::= digit { digit } ;
+character        ::= lowercase-char | uppercase-char | digit | special-char;
+lowercase-char   ::= "a" | "b" | "..." | "z";
+uppercase-char   ::= "A" | "B" | "..." | "Z";
+special-char     ::= "-" | "_";
+digit            ::= "0" | "1" | "..." | "9";
 ```
 
 ### 2.4 Explanations of the rules
@@ -149,32 +138,11 @@ Several languages and frameworks offer relational, declarative, or context-sensi
 
 ---
 
-## 4. Applications
-
-RelateScript’s structure is ideal for:
-- **AI Systems**: Defining context-aware rules for automated reasoning.
-- **Knowledge Representation**: Modeling entities, attributes, and relationships within a specific domain.
-- **Decision-Making Systems**: Using goals and conditions to dynamically adjust program behavior.
-
-### 4.1 Advantages of RelateScript for an LLM
-1. **Clarity and Precision**: RelateScript is clearly structured, with defined rules and terms. This reduces the ambiguity often found in natural language and ensures that the LLM correctly interprets the intended meaning.
-  
-2. **Clear Relationships and Conditions**: The declarative structure of RelateScript is particularly suited to explicitly formulate connections and conditions. This can help an LLM draw conclusions or coordinate sequential steps.
-
-3. **Reduced Interpretation**: Since RelateScript is based on a logical grammar, the "interpretation work" for an LLM is often easier. It requires less contextual understanding of the language itself and can focus on the instructions.
-
-### 4.2 Limitations of RelateScript Compared to Natural Language
-1. **Comprehensibility and Accessibility**: For many users, natural language is more intuitive and easier to use, as it requires no specific structure or defined syntax. This is an advantage when the instructions for the LLM are created by non-programmers.
-
-2. **Flexibility and Expressiveness**: Natural language is much more flexible and can convey complex, nuanced instructions that are harder to express in a highly structured system like RelateScript. Examples include metaphors, vague terms, or context descriptions common in human communication.
-
-3. **Processing Capability of LLMs**: Modern LLMs like GPT-4 are designed to understand natural language and process it contextually. They are often already capable of interpreting complex instructions without requiring a formalized language. In many cases, LLMs understand natural language accurately enough, so RelateScript offers fewer advantages.
-
-### 4.3 Combining RelateScript and Natural Language
+## 4. Combining RelateScript and Natural Language
 
 RelateScript stands as a structured, logic-driven framework that can seamlessly complement natural language-based prompting approaches. While natural language offers unparalleled flexibility and nuance, particularly for creative and ambiguous tasks, RelateScript excels in scenarios requiring clarity, precision, and logical consistency. 
 
-#### **Integration with Natural Language Prompting**
+### 4.1 **Integration with Natural Language Prompting**
 RelateScript can be effectively paired with natural language inputs to combine the strengths of both methods:
 - **Natural Language**: Provides the flexibility to set context, describe abstract ideas, or initiate creative exploration.
 - **RelateScript**: Ensures logical rigor by explicitly defining entities, relationships, and conditional rules.
@@ -184,24 +152,28 @@ For example, a user might begin with a natural language prompt such as:
 
 This context can then be supported by a RelateScript block:  
 ```plaintext
-define Customer as "A person who buys products".
-Customer has budget of 200.
-define Product as "A sellable item".
-Product has price of 150.
+define Product as "A product for sale".
+Product is available.
+Product has price of 100.
+Product has category of "Electronics".
 
-relate Customer and Product as "purchases" if Customer has budget >= Product price.
-ensure Customer purchases Product.
+define Customer as "A person who wants to buy a product".
+Customer has budget of 150.
+
+relate Customer and Product as "buys" if Product is available and Customer has budget of 150.
+
+ensure Customer buys Product.
 ```
 
 This combination allows LLMs to leverage the intuitive and context-rich setup of natural language while adhering to the logical structure and precision of RelateScript.
 
-#### **Complementing LLM Prompting Techniques**
+### 4.2 **Complementing LLM Prompting Techniques**
 RelateScript aligns with advanced prompting techniques for LLMs, such as:
 1. **Logical and Sequential Processing**: By explicitly structuring steps and conditions, RelateScript mirrors techniques like Chain-of-Thought (CoT) prompting, enhancing the LLM's ability to reason through multi-step tasks.
 2. **Specificity and Targeting**: RelateScript's declarative syntax inherently reduces ambiguity, making it particularly suited for Target-your-response (TAR) prompts or goal-driven interactions.
 3. **Contextual Understanding**: The structured representation of relationships and dependencies enables LLMs to maintain coherent outputs across context-rich or multi-step scenarios.
 
-#### **Applications and Limitations**
+### 4.3 **Applications and Limitations**
 RelateScript is ideal for tasks requiring:
 - Precise execution of logical rules and conditions.
 - Modeling of structured systems like workflows, decision trees, or knowledge graphs.
@@ -210,18 +182,119 @@ However, natural language remains superior for:
 - Creative, open-ended tasks where ambiguity or nuance is a feature, not a limitation.
 - Rapid prototyping of ideas without requiring formalized structures.
 
-#### **Recommendation**
+### 4.4 **Recommendation**
 The most effective use of RelateScript lies in its hybrid application, where it acts as a supplement to natural language inputs. This approach allows users to balance creativity and logical consistency, enabling LLMs to handle a wider range of tasks with both precision and adaptability.
 
 ---
 
-## 5. Conclusion
+## 5. Applications
+
+RelateScript’s structure is ideal for:
+- **AI Systems**: Defining context-aware rules for automated reasoning.
+- **Knowledge Representation**: Modeling entities, attributes, and relationships within a specific domain.
+- **Decision-Making Systems**: Using goals and conditions to dynamically adjust program behavior.
+
+### 5.1 Advantages of RelateScript for an LLM
+1. **Clarity and Precision**: RelateScript is clearly structured, with defined rules and terms. This reduces the ambiguity often found in natural language and ensures that the LLM correctly interprets the intended meaning.
+  
+2. **Clear Relationships and Conditions**: The declarative structure of RelateScript is particularly suited to explicitly formulate connections and conditions. This can help an LLM draw conclusions or coordinate sequential steps.
+
+3. **Reduced Interpretation**: Since RelateScript is based on a logical grammar, the "interpretation work" for an LLM is often easier. It requires less contextual understanding of the language itself and can focus on the instructions.
+
+### 5.2 Limitations of RelateScript Compared to Natural Language
+1. **Comprehensibility and Accessibility**: For many users, natural language is more intuitive and easier to use, as it requires no specific structure or defined syntax. This is an advantage when the instructions for the LLM are created by non-programmers.
+
+2. **Flexibility and Expressiveness**: Natural language is much more flexible and can convey complex, nuanced instructions that are harder to express in a highly structured system like RelateScript. Examples include metaphors, vague terms, or context descriptions common in human communication.
+
+3. **Processing Capability of LLMs**: Modern LLMs like GPT-4 are designed to understand natural language and process it contextually. They are often already capable of interpreting complex instructions without requiring a formalized language. In many cases, LLMs understand natural language accurately enough, so RelateScript offers fewer advantages.
+
+---
+
+## 6. Scenarios
+
+### 6.1 Scenario 1:
+
+Evaluate employee performance based on specific criteria and assign performance ratings.
+
+```plaintext
+define Employee as "A person employed by the company".
+Employee has name of "John Doe".
+Employee has performance_score of 85.
+
+define Performance_Rating as "A rating given to employees based on performance score".
+Performance_Rating has value of "Excellent" if Employee has performance_score >= 90.
+Performance_Rating has value of "Good" if Employee has performance_score >= 75 and Employee has performance_score < 90.
+Performance_Rating has value of "Average" if Employee has performance_score >= 50 and Employee has performance_score < 75.
+Performance_Rating has value of "Needs Improvement" if Employee has performance_score < 50.
+
+relate Employee and Performance_Rating as "has_rating".
+
+ensure Employee has_rating Performance_Rating.
+```
+
+Expected Behavior: The system should assign a performance rating to the employee based on their performance score.
+
+You can use this as a template for other employees by simply replacing the name and rating. By providing this in a consistent format to the LLM, you can process it further with additional questions to generate analyses, letters, or other types of responses.
+
+### 6.2 Scenario 2:
+
+Predict sales based on historical data and market trends.
+
+```plaintext
+define Product as "A sellable item".
+Product has name of "Smartphone".
+Product has historical_sales of [100, 150, 200, 250, 300].
+
+define Market_Trend as "An indicator of market conditions affecting sales".
+Market_Trend has trend of "Increasing".
+
+define Sales_Prediction as "An estimated future sales figure".
+Sales_Prediction has value of 350 if Market_Trend has trend of "Increasing" and Product has historical_sales[-1] < 350.
+
+relate Product and Sales_Prediction as "predicted_sales".
+
+ensure Product predicted_sales Sales_Prediction.
+```
+
+Expected Behavior: The system should predict the future sales of the "Smartphone" based on the increasing market trend and the last recorded historical sales figure.
+
+### 6.3 Scenario 3:
+
+Manage project milestones and ensure deadlines are met.
+
+```plaintext
+define Project as "A planned undertaking involving resources and activities".
+Project has name of "Website Redesign".
+Project has start_date of "2023-10-01".
+Project has end_date of "2023-12-31".
+
+define Milestone as "A significant point in the project timeline".
+Milestone has name of "Design Phase".
+Milestone has due_date of "2023-10-31".
+Milestone has status of "Not Started".
+
+relate Project and Milestone as "includes" if Milestone has due_date <= Project has end_date.
+
+define Deadline as "A critical date by which a task must be completed".
+Deadline has date of "2023-10-31".
+
+if Milestone has due_date = Deadline.date,
+    then ensure Milestone has status of "Started".
+
+ensure Project includes Milestone.
+```
+
+Expected Behavior: The system should recognize that the "Design Phase" milestone is part of the "Website Redesign" project and update its status to "Started" when the due date matches the deadline.
+
+---
+
+## 7. Conclusion
 
 RelateScript provides a structured, declarative framework for tasks that require precision and logical consistency, making it a powerful tool in applications such as knowledge representation, decision-making, and AI systems. Its syntax emphasizes readability and ease of understanding, allowing users to convey complex conditions and objectives in a manner that resonates with natural human language.
 
 By integrating RelateScript with natural language prompting, users can leverage the best of both worlds—combining the intuitive, creative capabilities of natural language with the rigor and repeatability of logical reasoning. This hybrid approach broadens the scope of RelateScript's applications and positions it as an essential tool for enhancing LLM-driven workflows.
 
-Future work could involve testing the language in real-world AI and knowledge management systems.
+Future work could involve [testing](/test/testsuite.md) the language in real-world AI and knowledge management systems.
  
 ---
 
