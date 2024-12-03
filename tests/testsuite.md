@@ -27,7 +27,11 @@ The LLM should recognize that a "Book" is an object and "J.K. Rowling" is the au
 ```plaintext
 define Plant as "Living being that performs photosynthesis".
 Flower is a Plant.
-ask "Is Flower a Plant?".
+```
+
+**Query**
+```plaintext
+"Is Flower a Plant?"
 ```
 
 **Expected Behavior:**
@@ -134,6 +138,28 @@ if Dish requires Ingredient,
 The LLM should understand the "Cooking" process and recognize that the dish is complete when all steps are finished.
 
 **Test Objective:** Test if the LLM can follow a sequential process and derive a condition for "completeness" from it.
+
+
+### 8. AI Systems: Context-aware Rules
+
+Here we create rules for an intelligent system that controls lighting based on the time of day and room occupancy.
+
+```plaintext
+define Room as "A location within a building."
+Room has Light of "off."
+define Person as "A human who can be present in the room."
+
+if Room has Light of "off" and Zeit is "night" and Person is in the room,
+    then ensure Room has Light of "on."
+
+if Room has Light of "on" and Zeit is "day" and Person is not in the room,
+    then ensure Room has Light of "off."
+```
+
+**Expected Behavior:**
+The system ensures that the light is turned on at night when someone is in the room, and turned off during the day when the room is empty. Such rules aid in automation and energy savings in smart home systems.
+
+**Test Objective:** Test if the LLM can follow the rules.
 
 ---
 
