@@ -90,18 +90,18 @@ digit            ::= "0" | "1" | "..." | "9";
 - **Conditions** (`condition`): Defines a condition and a resulting action.
 - **Goals** (`goal`): Describes a goal that is to be achieved.
 
-3 **Expression rules**:
+3. **Expression rules**:
 - **condition expressions** (`condition_expr`): Check relationships or properties between entities.
 - **Goal expressions** (`goal_expr`): Describe what is to be achieved.
 - **Actions** (`action`): Relate to the goal that is to be fulfilled.
 
-4 **Basic structures**:
+4. **Basic structures**:
 - `entity`, `predicate_value`, `attribute_name`, `attribute_value` and `relation_type` are basic components represented by identifiers (e.g. names) or values (such as numbers).
 
-5 **Operators**:
+5. **Operators**:
 - `predicate_operator`, `attribute_operator`, and `relation_operator` define the type of relationships or conditions, e.g. “is”, “has”, “relates to”.
 
-6 **Terminals**:
+6. **Terminals**:
 - `identifier` represents names and must begin with a letter.
 - `string` stands for text and is enclosed in quotation marks.
 
