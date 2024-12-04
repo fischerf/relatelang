@@ -42,6 +42,8 @@ if City has Population > 1_000_000,
 
 Expected Behavior: The LLM should recognize that Berlin is a "Metropolis" because its population is greater than 1,000,000.
 
+> more [Samples](/samples/)
+
 ### 2.3 eBNF Grammar
 The following Extended Backus-Naur Form (eBNF) defines RelateScript's syntax:
 
@@ -107,42 +109,11 @@ digit            ::= "0" | "1" | "..." | "9";
 
 ---
 
-## 3. Comparison with Existing Languages
-
-Several languages and frameworks offer relational, declarative, or context-sensitive capabilities. Here, we compare RelateScript to similar systems.
-
-### 3.1 Prolog
-**Prolog** is a logic programming language commonly used in AI. It uses facts and rules to derive new information.
-- **Similarity**: Both languages use declarative structures to represent relations.
-- **Difference**: Prolog's syntax and predicate logic make it less readable for non-technical users.
-
-### 3.2 Datalog
-**Datalog** is a simplified version of Prolog, used for database queries and logical reasoning.
-- **Similarity**: Datalog’s focus on facts and rules aligns with RelateScript's relational approach.
-- **Difference**: Datalog lacks natural language readability and context-sensitive features.
-
-### 3.3 SPARQL and RDF
-**SPARQL** and **RDF** model data as a graph of subject-predicate-object relationships, often for the semantic web.
-- **Similarity**: Both use declarative syntax to express relationships.
-- **Difference**: SPARQL and RDF are tailored for distributed knowledge bases, not flexible programming.
-
-### 3.4 Description Logic (DL)
-**Description Logic** is a formal language for knowledge representation in ontologies.
-- **Similarity**: Both use logical relations to define entities and their attributes.
-- **Difference**: Description Logic's formalism is more complex and less natural for general programming.
-
-### 3.5 Rules Engines (e.g., Drools)
-**Rules Engines** use declarative rules for automated decision-making in business applications.
-- **Similarity**: They support `if-then` logic, like RelateScript’s conditions and goals.
-- **Difference**: Rules engines are often restricted to business applications and lack RelateScript’s flexible syntax.
-
----
-
-## 4. Combining RelateScript and Natural Language
+## 3. Combining RelateScript and Natural Language
 
 RelateScript stands as a structured, logic-driven framework that can seamlessly complement natural language-based prompting approaches. While natural language offers unparalleled flexibility and nuance, particularly for creative and ambiguous tasks, RelateScript excels in scenarios requiring clarity, precision, and logical consistency. 
 
-### 4.1 **Integration with Natural Language Prompting**
+### 3.1 **Integration with Natural Language Prompting**
 RelateScript can be effectively paired with natural language inputs to combine the strengths of both methods:
 - **Natural Language**: Provides the flexibility to set context, describe abstract ideas, or initiate creative exploration.
 - **RelateScript**: Ensures logical rigor by explicitly defining entities, relationships, and conditional rules.
@@ -167,13 +138,13 @@ ensure Customer buys Product.
 
 This combination allows LLMs to leverage the intuitive and context-rich setup of natural language while adhering to the logical structure and precision of RelateScript.
 
-### 4.2 **Complementing LLM Prompting Techniques**
+### 3.2 **Complementing LLM Prompting Techniques**
 RelateScript aligns with advanced prompting techniques for LLMs, such as:
 1. **Logical and Sequential Processing**: By explicitly structuring steps and conditions, RelateScript mirrors techniques like Chain-of-Thought (CoT) prompting, enhancing the LLM's ability to reason through multi-step tasks.
 2. **Specificity and Targeting**: RelateScript's declarative syntax inherently reduces ambiguity, making it particularly suited for Target-your-response (TAR) prompts or goal-driven interactions.
 3. **Contextual Understanding**: The structured representation of relationships and dependencies enables LLMs to maintain coherent outputs across context-rich or multi-step scenarios.
 
-### 4.3 **Applications and Limitations**
+### 3.3 **Applications and Limitations**
 RelateScript is ideal for tasks requiring:
 - Precise execution of logical rules and conditions.
 - Modeling of structured systems like workflows, decision trees, or knowledge graphs.
@@ -182,8 +153,39 @@ However, natural language remains superior for:
 - Creative, open-ended tasks where ambiguity or nuance is a feature, not a limitation.
 - Rapid prototyping of ideas without requiring formalized structures.
 
-### 4.4 **Recommendation**
+### 3.4 **Recommendation**
 The most effective use of RelateScript lies in its hybrid application, where it acts as a supplement to natural language inputs. This approach allows users to balance creativity and logical consistency, enabling LLMs to handle a wider range of tasks with both precision and adaptability.
+
+---
+
+## 4. Comparison with Existing Languages
+
+Several languages and frameworks offer relational, declarative, or context-sensitive capabilities. Here, we compare RelateScript to similar systems.
+
+### 4.1 Prolog
+**Prolog** is a logic programming language commonly used in AI. It uses facts and rules to derive new information.
+- **Similarity**: Both languages use declarative structures to represent relations.
+- **Difference**: Prolog's syntax and predicate logic make it less readable for non-technical users.
+
+### 4.2 Datalog
+**Datalog** is a simplified version of Prolog, used for database queries and logical reasoning.
+- **Similarity**: Datalog’s focus on facts and rules aligns with RelateScript's relational approach.
+- **Difference**: Datalog lacks natural language readability and context-sensitive features.
+
+### 4.3 SPARQL and RDF
+**SPARQL** and **RDF** model data as a graph of subject-predicate-object relationships, often for the semantic web.
+- **Similarity**: Both use declarative syntax to express relationships.
+- **Difference**: SPARQL and RDF are tailored for distributed knowledge bases, not flexible programming.
+
+### 4.4 Description Logic (DL)
+**Description Logic** is a formal language for knowledge representation in ontologies.
+- **Similarity**: Both use logical relations to define entities and their attributes.
+- **Difference**: Description Logic's formalism is more complex and less natural for general programming.
+
+### 4.5 Rules Engines (e.g., Drools)
+**Rules Engines** use declarative rules for automated decision-making in business applications.
+- **Similarity**: They support `if-then` logic, like RelateScript’s conditions and goals.
+- **Difference**: Rules engines are often restricted to business applications and lack RelateScript’s flexible syntax.
 
 ---
 
