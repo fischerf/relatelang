@@ -1,24 +1,24 @@
 
-# RelateScript: A Declarative Meta-Language for Consistent LLM Prompt Engineering
+# RelateLang: A Declarative Meta-Language for Consistent LLM Prompt Engineering
 
 
 ## Abstract
-RelateScript is a declarative meta-language designed to streamline the creation of structured and consistent prompts for large language models (LLMs). This paper introduces RelateScript's syntax, highlighting its foundation in relational and predicate logic. By focusing on relationships, conditions, and context, RelateScript bridges the gap between natural language expressiveness and the precision required for effective LLM interaction. It facilitates a novel approach to prompt engineering, where humans and LLMs collaboratively develop structured prompts that can be easily modified and reused for diverse tasks, enhancing the reliability and automation capabilities of LLM-driven workflows.
+RelateLang (former called RelateScript) is a declarative meta-language designed to streamline the creation of structured and consistent prompts for large language models (LLMs). This paper introduces RelateLang's syntax, highlighting its foundation in relational and predicate logic. By focusing on relationships, conditions, and context, RelateLang bridges the gap between natural language expressiveness and the precision required for effective LLM interaction. It facilitates a novel approach to prompt engineering, where humans and LLMs collaboratively develop structured prompts that can be easily modified and reused for diverse tasks, enhancing the reliability and automation capabilities of LLM-driven workflows.
 
 ---
 
 ## 1. Introduction
-In the rapidly evolving field of large language models (LLMs), the effectiveness of interactions heavily relies on the quality of prompts. Traditional imperative programming languages often impose rigid structures that contrast with the nuanced and context-sensitive nature of human reasoning. While natural language offers unparalleled flexibility for interacting with LLMs, it can lead to ambiguity and inconsistency in prompt outputs. To address these challenges, we introduce RelateScript, a declarative meta-language specifically designed for crafting structured prompts. RelateScript enables users to define entities, relationships, and conditions in a format that is both readable and logically precise. RelateScript is not intended as a traditional programming language with a separate parser, but rather as a structured input format that leverages the inherent understanding capabilities of LLMs.
+In the rapidly evolving field of large language models (LLMs), the effectiveness of interactions heavily relies on the quality of prompts. Traditional imperative programming languages often impose rigid structures that contrast with the nuanced and context-sensitive nature of human reasoning. While natural language offers unparalleled flexibility for interacting with LLMs, it can lead to ambiguity and inconsistency in prompt outputs. To address these challenges, we introduce RelateLang, a declarative meta-language specifically designed for crafting structured prompts. RelateLang enables users to define entities, relationships, and conditions in a format that is both readable and logically precise. RelateLang is not intended as a traditional programming language with a separate parser, but rather as a structured input format that leverages the inherent understanding capabilities of LLMs.
 
 ### 1.1 Motivation
-RelateScript addresses the growing need for a more systematic and reliable approach to prompt engineering. As LLMs become increasingly sophisticated, the ability to articulate complex instructions and define precise conditions becomes crucial for harnessing their full potential. RelateScript provides an accessible and intuitive way of describing relationships and dependencies between entities, enabling users to express intricate logic in a manner that aligns closely with human reasoning. With a syntax designed for readability, RelateScript empowers users to generate consistent prompts, making it particularly suited for building reusable prompt templates that can be adapted for different scenarios, thus enhancing the efficiency and reliability of LLM interactions. It also allows for combining the strengths of human domain knowledge with the structure of a logical form.
+RelateLang addresses the growing need for a more systematic and reliable approach to prompt engineering. As LLMs become increasingly sophisticated, the ability to articulate complex instructions and define precise conditions becomes crucial for harnessing their full potential. RelateLang provides an accessible and intuitive way of describing relationships and dependencies between entities, enabling users to express intricate logic in a manner that aligns closely with human reasoning. With a syntax designed for readability, RelateLang empowers users to generate consistent prompts, making it particularly suited for building reusable prompt templates that can be adapted for different scenarios, thus enhancing the efficiency and reliability of LLM interactions. It also allows for combining the strengths of human domain knowledge with the structure of a logical form.
 
 ---
 
 ## 2. Language Design
 
 ### 2.1 Syntax
-The syntax of RelateScript emphasizes natural language structure, allowing for readable declarations of entities, relationships, and conditions. Its main constructs include:
+The syntax of RelateLang emphasizes natural language structure, allowing for readable declarations of entities, relationships, and conditions. Its main constructs include:
 - **Definitions**: `define <Entity> as <Description>.`
 - **Predicates**: `<Entity> is <Predicate>.`
 - **Attributes**: `<Entity> has <Attribute> of <Value>.`
@@ -45,7 +45,7 @@ Expected Behavior: The LLM should recognize that Berlin is a "Metropolis" becaus
 > more [Samples](/samples/)
 
 ### 2.3 eBNF Grammar
-The following Extended Backus-Naur Form (eBNF) defines RelateScript's syntax:
+The following Extended Backus-Naur Form (eBNF) defines RelateLang's syntax:
 
 ```ebnf
 program          ::= { statement } ;
@@ -109,20 +109,20 @@ digit            ::= "0" | "1" | "..." | "9";
 
 ---
 
-## 3. Combining RelateScript and Natural Language
+## 3. Combining RelateLang and Natural Language
 
-RelateScript offers a structured, logic-driven framework that seamlessly complements natural language-based prompting approaches. While natural language excels in conveying nuance and ambiguity, particularly for creative tasks, RelateScript provides clarity, precision, and logical consistency—essential qualities for complex and multi-step interactions with LLMs.
+RelateLang offers a structured, logic-driven framework that seamlessly complements natural language-based prompting approaches. While natural language excels in conveying nuance and ambiguity, particularly for creative tasks, RelateLang provides clarity, precision, and logical consistency—essential qualities for complex and multi-step interactions with LLMs.
 
 ### 3.1 **Integration with Natural Language Prompting**
-RelateScript can be effectively paired with natural language inputs to combine the strengths of both methods:
+RelateLang can be effectively paired with natural language inputs to combine the strengths of both methods:
 
 - **Natural Language**:  Sets the context, describes abstract ideas, and initiates creative exploration through flexible phrasing.
-- **RelateScript**: Ensures logical rigor by explicitly defining entities, relationships, and conditional rules within a structured template.
+- **RelateLang**: Ensures logical rigor by explicitly defining entities, relationships, and conditional rules within a structured template.
 
 For example, a user might begin with a natural language prompt such as:  
 *"Help me build a sales model. Start by making basic assumptions about customers and products."*  
 
-This context can then be supported by a RelateScript block:  
+This context can then be supported by a RelateLang block:  
 ```plaintext
 define Product as "A product for sale".
 Product is available.
@@ -137,16 +137,16 @@ relate Customer and Product as "buys" if Product is available and Customer has b
 ensure Customer buys Product.
 ```
 
-This combination allows LLMs to leverage the intuitive and context-rich setup of natural language while adhering to the logical structure and precision of RelateScript.
+This combination allows LLMs to leverage the intuitive and context-rich setup of natural language while adhering to the logical structure and precision of RelateLang.
 
 ### 3.2 **Complementing LLM Prompting Techniques**
-RelateScript aligns with advanced prompting techniques for LLMs, such as:
-1. **Logical and Sequential Processing**: By explicitly structuring steps and conditions, RelateScript mirrors techniques like Chain-of-Thought (CoT) prompting, enhancing the LLM's ability to reason through multi-step tasks.
-2. **Specificity and Targeting**: RelateScript's declarative syntax inherently reduces ambiguity, making it particularly suited for Target-your-response (TAR) prompts or goal-driven interactions.
+RelateLang aligns with advanced prompting techniques for LLMs, such as:
+1. **Logical and Sequential Processing**: By explicitly structuring steps and conditions, RelateLang mirrors techniques like Chain-of-Thought (CoT) prompting, enhancing the LLM's ability to reason through multi-step tasks.
+2. **Specificity and Targeting**: RelateLang's declarative syntax inherently reduces ambiguity, making it particularly suited for Target-your-response (TAR) prompts or goal-driven interactions.
 3. **Contextual Understanding**: The structured representation of relationships and dependencies enables LLMs to maintain coherent outputs across context-rich or multi-step scenarios.
 
 ### 3.3 **Applications and Limitations**
-RelateScript is ideal for tasks requiring:
+RelateLang is ideal for tasks requiring:
 - Precise execution of logical rules and conditions.
 - Modeling of structured systems like workflows, decision trees, or knowledge graphs.
 - Creating reusable prompt templates for consistent LLM interactions.
@@ -156,13 +156,13 @@ However, natural language remains superior for:
 - Rapid prototyping of ideas without requiring formalized structures.
 
 ### 3.4 **Recommendation**
-The most effective use of RelateScript lies in its hybrid application, where it acts as a supplement to natural language inputs. This approach allows users to balance creativity and logical consistency, enabling LLMs to handle a wider range of tasks with both precision and adaptability. We advocate for an iterative workflow where RelateScript prompts are continuously refined based on LLM feedback, leading to increasingly effective and reliable interactions.
+The most effective use of RelateLang lies in its hybrid application, where it acts as a supplement to natural language inputs. This approach allows users to balance creativity and logical consistency, enabling LLMs to handle a wider range of tasks with both precision and adaptability. We advocate for an iterative workflow where RelateLang prompts are continuously refined based on LLM feedback, leading to increasingly effective and reliable interactions.
 
 ---
 
 ## 4. Comparison with Existing Languages
 
-Several languages and frameworks offer relational, declarative, or context-sensitive capabilities. Here, we compare RelateScript to similar systems.
+Several languages and frameworks offer relational, declarative, or context-sensitive capabilities. Here, we compare RelateLang to similar systems.
 
 ### 4.1 Prolog
 **Prolog** is a logic programming language commonly used in AI. It uses facts and rules to derive new information.
@@ -171,7 +171,7 @@ Several languages and frameworks offer relational, declarative, or context-sensi
 
 ### 4.2 Datalog
 **Datalog** is a simplified version of Prolog, used for database queries and logical reasoning.
-- **Similarity**: Datalog’s focus on facts and rules aligns with RelateScript's relational approach.
+- **Similarity**: Datalog’s focus on facts and rules aligns with RelateLang's relational approach.
 - **Difference**: Datalog lacks natural language readability and context-sensitive features.
 
 ### 4.3 SPARQL and RDF
@@ -186,14 +186,14 @@ Several languages and frameworks offer relational, declarative, or context-sensi
 
 ### 4.5 Rules Engines (e.g., Drools)
 **Rules Engines** use declarative rules for automated decision-making in business applications.
-- **Similarity**: They support `if-then` logic, like RelateScript’s conditions and goals.
-- **Difference**: Rules engines are often restricted to business applications and lack RelateScript’s flexible syntax.
+- **Similarity**: They support `if-then` logic, like RelateLang’s conditions and goals.
+- **Difference**: Rules engines are often restricted to business applications and lack RelateLang’s flexible syntax.
 
 ---
 
 ## 5. Applications
 
-RelateScript’s structure is ideal for:
+RelateLang’s structure is ideal for:
 
 - **Scientific Research**: 
   - Formalizing hypotheses and experimental designs
@@ -211,19 +211,19 @@ RelateScript’s structure is ideal for:
 
 - **Decision-Making Systems**: Using goals and conditions to dynamically adjust program behavior.
 
-### 5.1 Advantages of RelateScript for an LLM
-1. **Clarity and Precision**: RelateScript is clearly structured, with defined rules and terms. This reduces the ambiguity often found in natural language and ensures that the LLM correctly interprets the intended meaning.
+### 5.1 Advantages of RelateLang for an LLM
+1. **Clarity and Precision**: RelateLang is clearly structured, with defined rules and terms. This reduces the ambiguity often found in natural language and ensures that the LLM correctly interprets the intended meaning.
   
-2. **Clear Relationships and Conditions**: The declarative structure of RelateScript is particularly suited to explicitly formulate connections and conditions. This can help an LLM draw conclusions or coordinate sequential steps.
+2. **Clear Relationships and Conditions**: The declarative structure of RelateLang is particularly suited to explicitly formulate connections and conditions. This can help an LLM draw conclusions or coordinate sequential steps.
 
-3. **Reduced Interpretation**: Since RelateScript is based on a logical grammar, the "interpretation work" for an LLM is often easier. It requires less contextual understanding of the language itself and can focus on the instructions.
+3. **Reduced Interpretation**: Since RelateLang is based on a logical grammar, the "interpretation work" for an LLM is often easier. It requires less contextual understanding of the language itself and can focus on the instructions.
 
-### 5.2 Limitations of RelateScript Compared to Natural Language
+### 5.2 Limitations of RelateLang Compared to Natural Language
 1. **Comprehensibility and Accessibility**: For many users, natural language is more intuitive and easier to use, as it requires no specific structure or defined syntax. This is an advantage when the instructions for the LLM are created by non-programmers.
 
-2. **Flexibility and Expressiveness**: Natural language is much more flexible and can convey complex, nuanced instructions that are harder to express in a highly structured system like RelateScript. Examples include metaphors, vague terms, or context descriptions common in human communication.
+2. **Flexibility and Expressiveness**: Natural language is much more flexible and can convey complex, nuanced instructions that are harder to express in a highly structured system like RelateLang. Examples include metaphors, vague terms, or context descriptions common in human communication.
 
-3. **Processing Capability of LLMs**: Modern LLMs like GPT-4 are designed to understand natural language and process it contextually. They are often already capable of interpreting complex instructions without requiring a formalized language. In many cases, LLMs understand natural language accurately enough, so RelateScript offers fewer advantages.
+3. **Processing Capability of LLMs**: Modern LLMs like GPT-4 are designed to understand natural language and process it contextually. They are often already capable of interpreting complex instructions without requiring a formalized language. In many cases, LLMs understand natural language accurately enough, so RelateLang offers fewer advantages.
 
 ---
 
@@ -231,7 +231,7 @@ RelateScript’s structure is ideal for:
 
 ### 6.1 Scenario 1: Complex Physical & Mathematical Research
 
-This example demonstrates how RelateScript can be used to model physical phenomena, specifically the photoelectric effect in quantum mechanics.
+This example demonstrates how RelateLang can be used to model physical phenomena, specifically the photoelectric effect in quantum mechanics.
 
 ```plaintext
 define Planck_constant as "h = 6.62607015 × 10⁻³⁴ Js".
@@ -257,14 +257,14 @@ if Photon interacts with Metal,
 
 Expected Behavior: The system models the photoelectric effect where photons interact with a metal surface. When the total energy of the incident photons exceeds the metal's work function, electrons are emitted with kinetic energy equal to the difference between the incident photon energy and the work function.
 
-This example showcases RelateScript's potential for expressing complex physical phenomena in a way that's both precise enough for computational purposes and readable enough for human understanding. The language bridges the gap between mathematical formalism and natural language description, making it valuable for both educational and practical applications in physics and other scientific domains.
+This example showcases RelateLang's potential for expressing complex physical phenomena in a way that's both precise enough for computational purposes and readable enough for human understanding. The language bridges the gap between mathematical formalism and natural language description, making it valuable for both educational and practical applications in physics and other scientific domains.
 
 1. **Mathematical Languages** (Julia, SymPy) are excellent for computation but sacrifice readability.
 2. **Physics-Specific Languages** (Modelica, PENELOPE) are powerful but specialized.
 3. **Semantic Approaches** (OWL/RDF, SBML) offer formal semantics but are verbose.
 4. **Modern Tools** (Wolfram, PyViz) provide rich features but may be complex or proprietary.
 
-RelateScript finds a niche by:
+RelateLang finds a niche by:
 - Being more readable than formal notations
 - More structured than natural language
 - Not being tied to specific computation or simulation needs
@@ -272,7 +272,7 @@ RelateScript finds a niche by:
 
 ### 6.2 Scenario 2: AI Research - Reinforcement Learning System
 
-This example shows how RelateScript can model complex AI systems and their interactions.
+This example shows how RelateLang can model complex AI systems and their interactions.
 
 ```plaintext
 define Agent as "A learning AI agent".
@@ -296,11 +296,11 @@ if Agent takes Action in Environment,
 ensure Agent maximizes expected_future_reward.
 ```
 
-Expected Behavior: The system models a reinforcement learning agent's interaction with its environment, including state transitions, actions, and rewards. The RelateScript formulation captures the essential components and relationships of a reinforcement learning system.
+Expected Behavior: The system models a reinforcement learning agent's interaction with its environment, including state transitions, actions, and rewards. The RelateLang formulation captures the essential components and relationships of a reinforcement learning system.
 
 ### 6.3 Scenario 3: Medical Research - Clinical Study
 
-This example demonstrates how RelateScript can be used to structure and monitor clinical trials.
+This example demonstrates how RelateLang can be used to structure and monitor clinical trials.
 
 ```plaintext
 define Patient as "A participant in the clinical study".
@@ -333,7 +333,7 @@ relate Treatment_A and Treatment_B as "compare" through SignificanceTest.
 ensure p_value < 0.05 for "statistical significance".
 ```
 
-Expected Behavior: The system manages a clinical trial by tracking patients, treatments, and outcomes. It ensures proper monitoring of results and statistical analysis of treatment effectiveness. The RelateScript formulation provides a structured way to define and enforce clinical trial protocols.
+Expected Behavior: The system manages a clinical trial by tracking patients, treatments, and outcomes. It ensures proper monitoring of results and statistical analysis of treatment effectiveness. The RelateLang formulation provides a structured way to define and enforce clinical trial protocols.
 
 ### 6.4 Scenario 4: Predict sales
 
@@ -361,9 +361,9 @@ Expected Behavior: The system should predict the future sales of the "Smartphone
 
 ## 7. Conclusion
 
-RelateScript provides a structured, declarative framework for tasks that require precision and logical consistency, making it a powerful tool in applications such as knowledge representation, decision-making, and AI systems. Its syntax emphasizes readability and ease of understanding, allowing users to convey complex conditions and objectives in a manner that resonates with natural human language.
+RelateLang provides a structured, declarative framework for tasks that require precision and logical consistency, making it a powerful tool in applications such as knowledge representation, decision-making, and AI systems. Its syntax emphasizes readability and ease of understanding, allowing users to convey complex conditions and objectives in a manner that resonates with natural human language.
 
-By integrating RelateScript with natural language prompting, users can leverage the best of both worlds—combining the intuitive, creative capabilities of natural language with the rigor and repeatability of logical reasoning. This hybrid approach broadens the scope of RelateScript's applications and positions it as an essential tool for enhancing LLM-driven workflows, paving the way for more reliable, efficient, and automated interactions with large language models.
+By integrating RelateLang with natural language prompting, users can leverage the best of both worlds—combining the intuitive, creative capabilities of natural language with the rigor and repeatability of logical reasoning. This hybrid approach broadens the scope of RelateLang's applications and positions it as an essential tool for enhancing LLM-driven workflows, paving the way for more reliable, efficient, and automated interactions with large language models.
 
 Future work could involve [testing](/tests/testsuite.md) the language in real-world AI and knowledge management systems. Further research will also focus on refining the language's syntax, exploring its scalability, and addressing potential security vulnerabilities.
  

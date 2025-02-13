@@ -1,10 +1,10 @@
-The test suite consists of various **instructions and scenarios** that differ in complexity and cover different aspects of the language. Each instruction is formulated to use the structure of RelateScript and provides no additional explanations or interpretation hints.
+The test suite consists of various **instructions and scenarios** that differ in complexity and cover different aspects of the language. Each instruction is formulated to use the structure of RelateLang and provides no additional explanations or interpretation hints.
 
 Each test case contains an instruction, expected behavior or expected response, and an indication of which aspect of the language it tests.
 
 ---
 
-## Test Suite for RelateScript
+## Test Suite for RelateLang
 
 ### 1. Basic Definition and Relationship
 
@@ -165,9 +165,9 @@ The system ensures that the light is turned on at night when someone is in the r
 
 ### Summary and Evaluation Guide
 
-Each test poses different requirements for the LLM and covers various aspects of RelateScript.
+Each test poses different requirements for the LLM and covers various aspects of RelateLang.
 
-- **Successful Interpretation:** If the LLM is able to provide the expected answers or conclusions, this shows that RelateScript is intuitive enough to be used as a prompt language.
-- **Misunderstandings or Misinterpretations:** If the LLM does not interpret the instructions as expected, it might help to adjust the structure of RelateScript to reduce ambiguities or define specific terms more clearly.
+- **Successful Interpretation:** If the LLM is able to provide the expected answers or conclusions, this shows that RelateLang is intuitive enough to be used as a prompt language.
+- **Misunderstandings or Misinterpretations:** If the LLM does not interpret the instructions as expected, it might help to adjust the structure of RelateLang to reduce ambiguities or define specific terms more clearly.
 
-This test suite provides a foundation for evaluating how effectively RelateScript can control an LLM, and whether the language is suitable as a simple, precise, and "intuitively understandable" prompt language.
+This test suite provides a foundation for evaluating how effectively RelateLang can control an LLM, and whether the language is suitable as a simple, precise, and "intuitively understandable" prompt language.
