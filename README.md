@@ -24,7 +24,7 @@ With a syntax designed for readability, RelateLang empowers users to generate co
 
 Consider a practical example from software development. When multiple developers embed LLM prompts in production code, linguistic and structural differences emerge:
 
-```plaintext
+```java
 // Developer 1 (German native speaker)
 String prompt = "The customer has bought items for 1500 euros last month. " +
                 "He lives in Berlin which is a big city. Check if customer " + 
@@ -198,7 +198,7 @@ This structure provides:
 Beyond production systems, RelateLang excels at guiding LLMs through complex reasoning processes by breaking down multi-step problems into structured logical sequences. This capability is particularly valuable when moving from simple rule-based scenarios (like the fraud detection example above) to more complex optimization problems.
 RelateLang naturally guides LLMs through reasoning steps:
 
-```plaintext
+```prolog
 define Location as "A point in the delivery network".
 define Route as "A path connecting two or more locations".
 define Vehicle as "The transport used for delivery".
@@ -271,7 +271,7 @@ RelateLang's structure is ideal for various domains:
 - Modeling complex relationships in data
 
 Example: Modeling physical phenomena
-```plaintext
+```prolog
 define Photon as "A quantum of light".
 Photon has energy of E.
 define Metal as "A metallic element".
@@ -293,7 +293,7 @@ When embedding LLM interactions in production systems, RelateLang provides:
 **Standardization Across Teams**: International teams write consistent prompt structures regardless of linguistic background
 
 **Maintainable Business Logic**:
-```plaintext
+```prolog
 define Transaction as "A financial operation".
 Transaction has amount of 2500.
 Transaction has risk_score of calculated.
@@ -360,7 +360,7 @@ public class CustomerSegmentation {
 ### 5.3 Prompt Versioning and Testing
 
 **RelateLang template:** `customer_segmentation_v2.rl`
-```plaintext
+```prolog
         define Customer as "A person who purchases products".
         Customer has total_purchases of %d.
         Customer has account_age_days of %d.
