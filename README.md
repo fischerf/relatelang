@@ -52,7 +52,7 @@ This standardization becomes crucial as teams scale and prompts encode important
 
 RelateLang solves this by providing a structured format that transcends linguistic differences:
 
-```python
+```java
 String prompt = """
     define Customer as "A person who purchases products".
     Customer has monthly_purchases of 1500.
