@@ -164,7 +164,7 @@ This grammar captures RelateLang's essential structure while maintaining the fle
 
 ### 2.5 Production Example: Fraud Detection System
 
-```plaintext
+```prolog
 define Transaction as "A financial operation".
 Transaction has amount of 2500.
 Transaction has location of "Moscow".
