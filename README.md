@@ -195,8 +195,33 @@ This structure provides:
 
 ### 2.6 Chain-of-Thought Guidance
 
-Beyond production systems, RelateLang excels at guiding LLMs through complex reasoning processes by breaking down multi-step problems into structured logical sequences. This capability is particularly valuable when moving from simple rule-based scenarios (like the fraud detection example above) to more complex optimization problems.
-RelateLang naturally guides LLMs through reasoning steps:
+Beyond production systems, RelateLang excels at guiding LLMs through complex reasoning processes by breaking down multi-step problems into structured logical sequences. This capability is particularly valuable when moving from simple rule-based scenarios (like the optimization example below) to more complex optimization problems.
+
+Here we have a constraint-based optimization test that validates feasible delivery routes under capacity and demand constraints to identify the route combination with the minimal total distance.
+
+The natural language sample (GPT-4o).
+
+Q:
+
+```prolog
+We have one delivery truck with capacity for 20 units. The truck must deliver goods from the warehouse to three customers. Customer A needs 7 units, Customer B needs 5 units, and Customer C needs 12 units.
+The distances are as follows: From warehouse to Customer A is 15 kilometers. From warehouse to Customer B is 20 kilometers. From warehouse to Customer C is 25 kilometers. Between Customer A and Customer B the distance is 8 kilometers. Between Customer A and Customer C it is 18 kilometers. Between Customer B and Customer C the distance is 12 kilometers.
+The truck should visit all customers in one route. First check if the total demand of all customers does not exceed the truck capacity of 20 units. If the total demand is too high, then the route is not possible. If the demand is within capacity, then calculate the shortest possible route that visits all customers and returns to warehouse.
+Please find the optimal route with the minimal total driving distance.
+```
+
+A:
+
+```prolog
+The route is not possible because the total customer demand (24 units) exceeds the truck's capacity (20 units).
+```
+
+For GPT-4o it's not possible to find an answer, even with activated reasoning.
+
+
+The sample translated to RelateLang (GPT-4o).
+
+Q:
 
 ```prolog
 define Location as "A point in the delivery network".
@@ -221,6 +246,27 @@ if Step2_Result is achieved,
 
 ensure generate optimal_route based on Step3_Result.
 ```
+
+A:
+
+```prolog
+define Route_1 as "Warehouse → B → C → Warehouse".
+Route_1 has total_demand of 17.
+Route_1 has total_distance of 57.
+Route_1 has status of "valid".
+
+define Route_2 as "Warehouse → A → Warehouse".
+Route_2 has total_demand of 7.
+Route_2 has total_distance of 30.
+Route_2 has status of "valid".
+
+define optimal_route as [Route_1, Route_2].
+optimal_route has combined_total_distance of 87.
+optimal_route covers all customers.
+optimal_route is selected.
+```
+
+GPT-4o then even recognizes that the truck has to drive twice to deliver the goods because its capacity is insufficient.
 
 This structured approach helps LLMs maintain logical consistency across complex multi-step reasoning tasks, ensuring that each step builds appropriately on the previous ones.
 
